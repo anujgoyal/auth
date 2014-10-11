@@ -18,6 +18,7 @@
 		E2A43DA119E4E49E008AB014 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2A43DA019E4E49E008AB014 /* User.swift */; };
 		E2B675CD19E4F7C4007F9EFE /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B675CC19E4F7C4007F9EFE /* Tweet.swift */; };
 		E2B675D119E7D133007F9EFE /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B675D019E7D133007F9EFE /* TweetsViewController.swift */; };
+		E2B675D319E9D103007F9EFE /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B675D219E9D103007F9EFE /* TweetCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		E2A43DA019E4E49E008AB014 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E2B675CC19E4F7C4007F9EFE /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		E2B675D019E7D133007F9EFE /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
+		E2B675D219E9D103007F9EFE /* TweetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E265BC1E19E3954900AAEF0F /* ViewController.swift */,
 				E2B675D019E7D133007F9EFE /* TweetsViewController.swift */,
 				E265BC2019E3954900AAEF0F /* Main.storyboard */,
+				E2B675D219E9D103007F9EFE /* TweetCell.swift */,
 				E265BC2319E3954900AAEF0F /* Images.xcassets */,
 				E265BC2519E3954900AAEF0F /* LaunchScreen.xib */,
 				E265BC1A19E3954900AAEF0F /* Supporting Files */,
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2A43DA119E4E49E008AB014 /* User.swift in Sources */,
+				E2B675D319E9D103007F9EFE /* TweetCell.swift in Sources */,
 				E2B675CD19E4F7C4007F9EFE /* Tweet.swift in Sources */,
 				E2B675D119E7D133007F9EFE /* TweetsViewController.swift in Sources */,
 				E265BC1F19E3954900AAEF0F /* ViewController.swift in Sources */,
