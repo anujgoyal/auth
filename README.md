@@ -1,5 +1,5 @@
-auth
-====
+twitter
+=======
 <br/>TOTAL: 8 hours
 <br/>10/8-10/9: 3 hours recreating Oauth stuff
 <br/>10/11: 5 hours, continued difficulties with AutoLayout, 
@@ -16,5 +16,5 @@ features
 <br/>[NOT DONE]User can tap on a tweet to view it, with controls to retweet, favorite, and reply.
 
 optional
-==========
+========
 none
