@@ -20,32 +20,35 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         User.currentUser?.logout()
     }
     
+    func onCompose() {
+        //
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         // setup tableview delegate and datasource
         tableView.delegate = self
         tableView.dataSource = self
 
-        // set navbar
+        // try to setup the navbar programatically
         //navBar.frame = CGRectMake(0, 0, 320, 50)
         //navBar.backgroundColor = (UIColor.grayColor())
         //self.view.addSubview(navBar)
 
         // setup logout button
-        self.navBar?.topItem?.title   = "Timeline"
+        self.navBar?.topItem?.title = "Timeline"
         self.navBar?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blueColor()]
         //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blueColor()]
         
-        var b = UIBarButtonItem(title: "Logout",
-            style: UIBarButtonItemStyle.Bordered,
-            target: self,
-            action: Selector("onLogout"))
-        
-        self.navBar?.topItem?.rightBarButtonItem = b
+        var b = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.Bordered,
+            target: self, action: Selector("onLogout"))
+        self.navBar?.topItem?.leftBarButtonItem = b
 
-        //self.navigationItem.rightBarButtonItem = b
-        //self.navigationItem.title = "Timeline"
-        
+        var c = UIBarButtonItem(title: "Compose", style: UIBarButtonItemStyle.Bordered,
+            target: self, action: Selector("onCompose"))
+        self.navBar?.topItem?.rightBarButtonItem = c
+
+        // setup refresh control
         refreshControl = UIRefreshControl()
         refreshControl.backgroundColor = UIColor.blueColor()
         refreshControl.tintColor = UIColor.whiteColor()
