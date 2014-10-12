@@ -101,25 +101,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0S-2G-K52">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSe-dJ-SQQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="ELg-iv-qJD"/>
+                                    <navigationItem title="Title" id="YvX-cb-MLz"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="D0S-2G-K52" firstAttribute="leading" secondItem="CEq-gc-G9E" secondAttribute="leadingMargin" constant="-16" id="2v2-r0-iuM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="D0S-2G-K52" secondAttribute="trailing" constant="-16" id="6u8-jU-E5h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pSe-dJ-SQQ" secondAttribute="trailing" constant="-16" id="6En-AZ-ZxL"/>
+                            <constraint firstItem="pSe-dJ-SQQ" firstAttribute="leading" secondItem="CEq-gc-G9E" secondAttribute="leadingMargin" constant="-16" id="BI0-zH-Gj9"/>
                             <constraint firstItem="Pql-pH-NNe" firstAttribute="leading" secondItem="CEq-gc-G9E" secondAttribute="leadingMargin" constant="-16" id="OLj-g2-422"/>
                             <constraint firstItem="Pql-pH-NNe" firstAttribute="top" secondItem="CEq-gc-G9E" secondAttribute="topMargin" id="Ohc-YP-1yS"/>
-                            <constraint firstItem="D0S-2G-K52" firstAttribute="top" secondItem="CEq-gc-G9E" secondAttribute="topMargin" id="YNb-Qn-A6y"/>
+                            <constraint firstItem="pSe-dJ-SQQ" firstAttribute="top" secondItem="CEq-gc-G9E" secondAttribute="topMargin" id="Wrh-TX-OLf"/>
                             <constraint firstItem="e0X-wC-JjB" firstAttribute="top" secondItem="Pql-pH-NNe" secondAttribute="bottom" id="gL4-jZ-wkV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pql-pH-NNe" secondAttribute="trailing" constant="-16" id="ztx-YD-W67"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="navBar" destination="pSe-dJ-SQQ" id="Ob1-cg-Jf1"/>
                         <outlet property="tableView" destination="Pql-pH-NNe" id="85M-6t-l94"/>
                     </connections>
                 </viewController>

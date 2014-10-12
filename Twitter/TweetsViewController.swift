@@ -10,12 +10,13 @@ import UIKit
 
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var tweets: [Tweet]?
+    @IBOutlet weak var navBar: UINavigationBar!
     var refreshControl:UIRefreshControl!
+    var tweets: [Tweet]?
     
     @IBOutlet weak var tableView: UITableView!
     
-    @IBAction func onLogout(sender: AnyObject) {
+    func onLogout() {
         User.currentUser?.logout()
     }
     
@@ -25,16 +26,25 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.delegate = self
         tableView.dataSource = self
 
+        // set navbar
+        //navBar.frame = CGRectMake(0, 0, 320, 50)
+        //navBar.backgroundColor = (UIColor.grayColor())
+        //self.view.addSubview(navBar)
+
         // setup logout button
-        self.navigationController?.navigationBar.titleTextAttributes =
-            [NSForegroundColorAttributeName: UIColor.blueColor()]
+        self.navBar?.topItem?.title   = "Timeline"
+        self.navBar?.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blueColor()]
+        //self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blueColor()]
         
         var b = UIBarButtonItem(title: "Logout",
             style: UIBarButtonItemStyle.Bordered,
             target: self,
             action: Selector("onLogout"))
-        self.navigationItem.rightBarButtonItem = b
-        self.navigationItem.title = "Timeline"
+        
+        self.navBar?.topItem?.rightBarButtonItem = b
+
+        //self.navigationItem.rightBarButtonItem = b
+        //self.navigationItem.title = "Timeline"
         
         refreshControl = UIRefreshControl()
         refreshControl.backgroundColor = UIColor.blueColor()
