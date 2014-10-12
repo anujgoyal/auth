@@ -24,7 +24,7 @@ class TweetCell: UITableViewCell {
         tweetTextLabel.text = tweet.text
         
         // remember, had to modify Twitter-Bridging-Header.h
-        userImage?.setImageWithURL(tweet.imgURL)
+        userImage?.setImageWithURL(tweet.user?.profileImageURL)
     }
 
 }

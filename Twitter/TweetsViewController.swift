@@ -11,6 +11,7 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var tweets: [Tweet]?
+    var refreshControl:UIRefreshControl!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,15 +26,27 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
 
         // setup logout button
-        var b = UIBarButtonItem(title: "Filters",
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSForegroundColorAttributeName: UIColor.blueColor()]
+        
+        var b = UIBarButtonItem(title: "Logout",
             style: UIBarButtonItemStyle.Bordered,
             target: self,
             action: Selector("onLogout"))
         self.navigationItem.rightBarButtonItem = b
         self.navigationItem.title = "Timeline"
         
+        refreshControl = UIRefreshControl()
+        refreshControl.backgroundColor = UIColor.blueColor()
+        refreshControl.tintColor = UIColor.whiteColor()
+        //http://stackoverflow.com/questions/25823063/change-pull-to-refresh-text-color-with-swift
+        var attr = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to Refresh", attributes: attr)
+        refreshControl.addTarget(self, action: "getData", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
+        
         getData()
-        NSLog("viewWillAppear: end")
+        //NSLog("viewWillAppear: end")
     }
     
     func getData() {
@@ -41,31 +54,25 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             completion: {(tweets, error) -> () in
                 NSLog("completion returned")
                 self.tweets = tweets
-                
-                for t in self.tweets! {
-                    NSLog("in for loop")
-                    //println("tweet user: \(t.user?.screenName!)")
-                    //println("tweet text: \(t.text!)")
-                }
-                self.tableView.reloadData()
-        })
+                self.tableView.reloadData() // have to do this in the completion method
+                self.refreshControl.endRefreshing()
+            })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NSLog("viewDidLoad: end")
+        
     }
 
     // number of rows
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        NSLog("numberOfRowsInSection: begin")
-        
+        //NSLog("numberOfRowsInSection: begin")
         if let t = tweets {
-            NSLog("t.count \(t.count)")
+            //NSLog("t.count \(t.count)")
             return t.count   // tweets!.count
         } else {
-            NSLog("no tweets!")
+            //NSLog("no tweets!")
             return 0
         }
     }
