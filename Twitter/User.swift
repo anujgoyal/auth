@@ -27,14 +27,14 @@ class User: NSObject {
         screenName = dictionary["screen_name"] as? String
         
         var urlString = dictionary["profile_image_url"] as? String
-        NSLog("s: \(urlString)")
-        
-        if let s = urlString {
+        //NSLog("s: \(urlString)")
+                if let s = urlString {
             profileImageURL = NSURL(string: s)
         }
-        NSLog("url: \(profileImageURL)")
+        //NSLog("url: \(profileImageURL)")
 
-        //tagline = dictionary["profilee"] as? String
+        tagline = dictionary["description"] as? String
+        NSLog("tagline: \(tagline)")
     }
     
     func logout() {
