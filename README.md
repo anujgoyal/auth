@@ -5,6 +5,10 @@ twitter
 <br/>10/11: 5 hours, continued difficulties with AutoLayout, 
  was able to make image appear but was not able to get it to stop resizing
 
+walkthrough
+===========
+(https://github.com/anujgoyal/auth/blob/master/twitter.gif)
+
 features
 ========
 <br/>[DONE] User can sign in using OAuth login flow, 1hr
