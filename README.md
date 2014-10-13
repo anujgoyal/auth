@@ -7,7 +7,7 @@ twitter
 
 walkthrough
 ===========
-https://github.com/anujgoyal/auth/blob/master/twitter.gif
+<img src="https://github.com/anujgoyal/auth/blob/master/twitter.gif"/>
 
 features
 ========
